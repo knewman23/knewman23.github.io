@@ -16,7 +16,13 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+#gem "wdm", "~> 0.1.0" if Gem.win_platform?
+
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
+
+require 'rbconfig'
+gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw|cygwin/i
+
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

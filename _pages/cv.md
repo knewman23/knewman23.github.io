@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "Resume"
+permalink: /resume/
 author_profile: true
 redirect_from:
   - /resume
@@ -9,51 +9,35 @@ redirect_from:
 
 {% include base_path %}
 
+
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Computer Science (Software Engineering Concentration), Arizona State University, 2016
+* M.S.E. in Software Engineering, Arizona State University, 2019 (expected)
+* Relevant Coursework: Artificial Neural Computation, Data Structures and Algorithms, Software Design, Computer Architecture, Distributed Software Integration, Linear Algebra and Calculus, Software Modeling
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* May 2016 - Present: Software Engineer, Intel Corporation
+  * Full Stack Software Engineer in Supply Chain
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* November 2015 - January 2017: Technology Director, TEDxASU Organization, ASU
+  * Lead technical team to design Tech Requirements and Organization Sites
+
+* May 2014 - April 2016: Software Engineering Intern, Intel Corporation
+  * Intern in Enterprise Solutions Development
+
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Languages: JavaScript, Python, TypeScript, HTML5, CSS3, C/C++, C#, Java, SQL
+* Frameworks & Libraries: Angular, React, NodeJs, .NET, TensorFlow, Pandas, NumPy, Hadoop, SAP HANA
+* Software: Amazon Web Services, DataRobot, Git, TFS, TeamCity, MatLab, CloudFoundry, Power BI
   
-Talks
+Hobbies and Extra Curricular
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Aspiring guitar player and craft beer tester
+* Classic Automotive Restoration
+* IOT Projects with RaspberryPi
+* Fitness (Weight Lifting, Hiking)
