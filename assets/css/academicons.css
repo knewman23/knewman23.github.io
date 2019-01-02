@@ -325,3 +325,10 @@
 .fa.fa-pull-right {
   margin-left: .3em;
 }
+
+div.highlighter-rouge .highlight, figure.highlight .highlight {
+  margin: 0;
+  font-family: Monaco,Consolas,"Lucida Console",monospace;
+  font-size: 0.8875em !important;
+  line-height: 1.8;
+}
