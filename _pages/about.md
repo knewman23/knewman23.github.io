@@ -22,6 +22,8 @@ Over the past few years, I've found myself passionately engaged in a variety of 
 
 In addition, I am also designing a cross-platform education application, launching later this year. My goal is to help students get organized while supplying supplemental learning material from around the web.
 
+![Me](/images/me.jpg)
+
 
 About this site
 ======
