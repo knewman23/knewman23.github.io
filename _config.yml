@@ -77,6 +77,10 @@ analytics:
   google:
     tracking_id          :
 
+features:
+  favicon: true
+favicon:
+  use_default: false
 
 # Site Author
 author:
