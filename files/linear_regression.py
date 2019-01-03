@@ -1,41 +1,15 @@
----
-title: 'Linear Regression with TensorFlow on TimeSeries Data'
-date: 2018-09-14
-permalink: /posts/2018/09/linear-regression/
-tags:
-  - Machine Learning
-  - AI
-  - engineering
----
-
-In my paper on Linear Regression (see [Paper 2](https://krysnewman.com/paper/linear-regresssion) ) we talked about developing a Linear Regression Model for timeseries data. Our group decided to use the Adam Optimizer and Gradient Descent models to compare the results from each. This code will go over the Adam Optimizer model. Lets go over the python! You can see the full python file here: [linear_regression.py](https://krysnewman.com/files/linear_regresssion.py)
-
-----
-Let's include our libraries
-
-```python
 import tensorflow as tf
 import pandas as pd
 import matplotlib as mpl
 mpl.use('TkAgg')
 import matplotlib.pyplot as plt
 import time
-```
 
-And make some initial variable declarations, we adjusted these during development (you can too)
-
-
-```python
 batch_size = 32
 learning_rate = 0.003
 n_epoches = 6000
-```
 
-
-We were provided this data for our project, so we had to read it in and do some formatting. We also split the data into training and test data for the model. 
-
-```python
-training_set = pd.read_excel('/Users/krystofe/Desktop/timeseries.xlsx', header=None, names=['features','labels'])
+training_set = pd.read_excel('data.xlsx', header=None, names=['features','labels'])
 df1 =  pd.DataFrame({'features' : training_set['features'].values, 'labels' : training_set['labels'].values})
 
 
@@ -60,11 +34,7 @@ train_init = iterator.make_initializer(train_dset)
 
 # get_next() returns a nested structure of `tf.Tensor`s containing the next element
 X, Y = iterator.get_next()
-```
 
-We wanted to see the results of our model so we included an R^2 calculation here
-
-```python
 def R_squared(y, y_pred):
     '''
     R_squared computes the coefficient of determination.
@@ -74,11 +44,7 @@ def R_squared(y, y_pred):
     total = tf.reduce_sum(tf.square(tf.subtract(y, tf.reduce_mean(y))))
     r2 = tf.subtract(1.0, tf.div(residual, total))
     return r2
-```
 
-Okay lets setup the Model and our linear regression variables
-
-```python
 # Model
 w = tf.Variable(tf.truncated_normal((1,), mean=0, stddev=0.1, seed=123), name='Weight')
 b = tf.Variable(tf.constant(0.1), name='Bias')
@@ -89,10 +55,7 @@ loss = tf.reduce_mean(tf.square(Y - y_pred), name='Loss')
         
 # training
 optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss)
-```
 
-Just because I was curious how long it took to train on the given dataset I setup the python timer around our training. 
-```python
 start = time.time()
 
 sess = tf.Session()
@@ -108,11 +71,7 @@ for epoch in range(n_epoches):
         pass
 
 end = time.time()
-```
 
-Lets take a look at the results. On average I was getting and R^2 value for the training data of 0.032 or 96% which is pretty good for our analyses of this data. 
-
-```python
 w_curr, b_curr = sess.run([w,b])
 y_pred_train = w_curr * train_d[:,0] + b_curr
 y_pred_test = w_curr * test_d[:,0] + b_curr
@@ -124,16 +83,10 @@ print('R^2_train:', sess.run(r2_train))
 print('R^2_test:', sess.run(r2_test))
 print('elapsed time:', end - start)
 sess.close()
-```
 
-And finally lets take a look at our plots witht the predictions
-```python
 plt.scatter(test_d[:,0], test_d[:,1], label='Real Data')
 plt.plot(test_d[:,0], y_pred_test, 'r', label='Predicted Data')
 plt.xlabel('Index') 
 plt.ylabel('Time Series')
 plt.legend()
 plt.show()
-```
-
-![Plot](/images/plot1.png "Linear Regression with Adam Optimizer")
