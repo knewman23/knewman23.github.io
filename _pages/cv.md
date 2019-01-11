@@ -13,8 +13,10 @@ redirect_from:
 
 Education
 ======
-* B.S. in Computer Science (Software Engineering Concentration), Arizona State University, 2016
 * M.S.E. in Software Engineering, Arizona State University, 2019 (expected)
+
+* B.S. in Computer Science (Software Engineering Concentration), Arizona State University, 2016
+
 * Relevant Coursework: Artificial Neural Computation, Data Structures and Algorithms, Software Design, Computer Architecture, Distributed Software Integration, Linear Algebra and Calculus, Software Modeling
 
 Work experience
