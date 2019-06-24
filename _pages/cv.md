@@ -13,7 +13,11 @@ redirect_from:
 
 Education
 ======
+<<<<<<< HEAD
 * M.S.E. in Software Engineering, Arizona State University, 2019 
+=======
+* M.S.E. in Software Engineering, Arizona State University, 2019 (expected)
+>>>>>>> 985907d3a4770c8f366ba3b26a562932f21ae49e
 
 * B.S. in Computer Science (Software Engineering Concentration), Arizona State University, 2016
 
