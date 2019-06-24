@@ -4,8 +4,6 @@ main:
     url: /posts/
   - title: "Papers"
     url: /papers/  
-  - title: "Portfolio"
-    url: /portfolio/
   - title: "Resume"
     url: /resume/
 

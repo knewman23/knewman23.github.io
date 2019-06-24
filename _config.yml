@@ -86,7 +86,7 @@ favicon:
 author:
   name             : "Krys Newman"
   avatar           : "profile.png"
-  bio              : "Web Dev and aspiring Machine Learning Engineer"
+  bio              : "Software Engineer"
   location         : "Phoenix, AZ"
   employer         : "Intel"
   googlescholar    :
@@ -179,9 +179,6 @@ collections:
   papers:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
 
 
 # Defaults
@@ -213,15 +210,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
 
 # Sass/SCSS
 sass:
