@@ -14,11 +14,7 @@ Please feel free to contact me using the links provided in the profile section!
 
 About Me
 ======
-<<<<<<< HEAD
 I was born and raised in the heat of Arizona and recently graduated with a Master's Degree in Software Engineering from Arizona State University. In 7th grade, I took an introduction to computers class and learned how to add and remove hardware from a desktop. The rest is history (Thanks, Mr. Harold).
-=======
-I was born and raised in the heat of Arizona and am currently pursuing a Master's Degree in Software Engineering (focusing on AI) from Arizona State University. In 7th grade, I took an introduction to computers class and learned how to add and remove hardware from a desktop. The rest is history (Thanks, Mr. Harold).
->>>>>>> 985907d3a4770c8f366ba3b26a562932f21ae49e
 
 Developing Software takes up most of my time, outside of that I love to listen to music, play guitar, and hang out with my friends and family.
 
