@@ -1,2 +1,0 @@
-(this.webpackJsonpbolby=this.webpackJsonpbolby||[]).push([[5],{211:function(t,s,e){"use strict";e.r(s),s.default=e.p+"static/media/react-patterns.31d6cfe0.md"}}]);
-//# sourceMappingURL=5.5ac597b2.chunk.js.map

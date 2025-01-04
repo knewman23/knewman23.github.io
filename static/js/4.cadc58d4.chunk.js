@@ -1,0 +1,2 @@
+(this.webpackJsonpbolby=this.webpackJsonpbolby||[]).push([[4],{212:function(s,e,i){"use strict";i.r(e),e.default=i.p+"static/media/linear-regression.9f226c01.md"}}]);
+//# sourceMappingURL=4.cadc58d4.chunk.js.map
