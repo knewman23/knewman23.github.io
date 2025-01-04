@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2845512d.chunk.css",
+    "main.js": "/static/js/main.925edd09.chunk.js",
+    "main.js.map": "/static/js/main.925edd09.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.596433f7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.596433f7.js.map",
+    "static/css/2.f27a3a7b.chunk.css": "/static/css/2.f27a3a7b.chunk.css",
+    "static/js/2.95b972c7.chunk.js": "/static/js/2.95b972c7.chunk.js",
+    "static/js/2.95b972c7.chunk.js.map": "/static/js/2.95b972c7.chunk.js.map",
+    "static/js/3.3251c4c1.chunk.js": "/static/js/3.3251c4c1.chunk.js",
+    "static/js/3.3251c4c1.chunk.js.map": "/static/js/3.3251c4c1.chunk.js.map",
+    "static/js/4.a38028f5.chunk.js": "/static/js/4.a38028f5.chunk.js",
+    "static/js/4.a38028f5.chunk.js.map": "/static/js/4.a38028f5.chunk.js.map",
+    "static/js/5.5ac597b2.chunk.js": "/static/js/5.5ac597b2.chunk.js",
+    "static/js/5.5ac597b2.chunk.js.map": "/static/js/5.5ac597b2.chunk.js.map",
+    "static/js/6.039cf87e.chunk.js": "/static/js/6.039cf87e.chunk.js",
+    "static/js/6.039cf87e.chunk.js.map": "/static/js/6.039cf87e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.f27a3a7b.chunk.css.map": "/static/css/2.f27a3a7b.chunk.css.map",
+    "static/css/main.2845512d.chunk.css.map": "/static/css/main.2845512d.chunk.css.map",
+    "static/js/2.95b972c7.chunk.js.LICENSE.txt": "/static/js/2.95b972c7.chunk.js.LICENSE.txt",
+    "static/media/common-misconceptions-about-payment.md": "/static/media/common-misconceptions-about-payment.e5b2c5dc.md",
+    "static/media/App.scss": "/static/media/map.0d7639e8.svg",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/linear-regression.md": "/static/media/linear-regression.9f226c01.md",
+    "static/media/react-patterns.md": "/static/media/react-patterns.31d6cfe0.md",
+    "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf",
+    "static/media/things-to-know-about-startup-business.md": "/static/media/things-to-know-about-startup-business.3df71b0b.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.596433f7.js",
+    "static/css/2.f27a3a7b.chunk.css",
+    "static/js/2.95b972c7.chunk.js",
+    "static/css/main.2845512d.chunk.css",
+    "static/js/main.925edd09.chunk.js"
+  ]
+}
