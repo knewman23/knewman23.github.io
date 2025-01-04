@@ -10,6 +10,7 @@ import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import "font-awesome/css/font-awesome.min.css";
 
@@ -57,6 +58,8 @@ function BlogDetails(props) {
         <SyntaxHighlighter
           style={syntaxTheme}
           language={match[1]}
+          wrapLongLines={false}
+          wrapLines={false}
           PreTag="div"
           {...props}
         >

@@ -15,8 +15,8 @@ function App() {
         <Route path="/" exact>
           <Homepage />
         </Route>
-        <Route path="/blogs" component={Bloglist} exact />
-        <Route path="/blogs/blog-details/:id/:title" component={BlogDetails} />
+        {/* <Route path="/blogs" component={Bloglist} exact />
+        <Route path="/blogs/blog-details/:id/:title" component={BlogDetails} /> */}
         <Route path="/papers" component={Paperslist} exact />
         <Route path="/paper/:urlTitle/" component={PaperDetails} />
       </Switch>

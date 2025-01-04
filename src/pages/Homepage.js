@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactCursorPosition from "react-cursor-position";
 import { Element } from "react-scroll";
 import Header from "../components/layouts/Header";
@@ -9,9 +9,11 @@ import Experiences from "../components/sections/Experiences";
 import Herosection from "../components/sections/Herosection";
 import Papers from "../components/sections/Papers";
 import Works from "../components/sections/Works";
+import { useLocation } from "react-router-dom";
 
 function Homepage() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const location = useLocation();
 
   const headerToggler = (e) => {
     e.preventDefault();
@@ -23,6 +25,10 @@ function Homepage() {
       setToggleMenu(false);
     }
   });
+
+  useEffect(() => {
+    setToggleMenu(false);
+  }, [location, setToggleMenu]);
 
   return (
     <>
@@ -46,9 +52,9 @@ function Homepage() {
         <Element name="section-works">
           <Works />
         </Element>
-        <Element name="section-blogs">
+        {/* <Element name="section-blogs">
           <Blogs />
-        </Element>
+        </Element> */}
         <Element name="section-papers">
           <Papers />
         </Element>

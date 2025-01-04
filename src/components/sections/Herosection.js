@@ -37,9 +37,15 @@ function Herosection(props) {
             <Typed
               strings={[
                 "Senior Software Engineer",
-                "Dog Dad",
                 "Full Stack Developer",
-                "Jiu Jitsu lover",
+                "Brazilian Jiu Jitsu Purple Belt",
+                "Website Builder",
+                "Husband and Dad",
+                "Hot Rod Enthusiast",
+                "Tinkerer",
+                "Video Game Nerd",
+                "Coffee Lover",
+                "Dog Lover",
               ]}
               typeSpeed={80}
               backSpeed={40}
@@ -75,7 +81,7 @@ function Herosection(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-google"></i>
+                <i className="fa fa-envelope"></i>
               </a>
             </li>
           </ul>

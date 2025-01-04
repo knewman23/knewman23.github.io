@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/layouts/Header";
 import { Document, Page, pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
@@ -45,11 +45,11 @@ function PaperDetails(props) {
         toggleMenu={toggleMenu}
         headerToggler={headerToggler}
       />
-      <main class={toggleMenu ? "content open" : "content"}>
-        <div class="spacer" data-height="96"></div>
-        <div class="blog-page-section">
-          <div class="container" style={{ maxWidth: "700px" }}>
-            <div class="blog-single shadow-dark p-30 center">
+      <main className={toggleMenu ? "content open" : "content"}>
+        <div className="spacer" data-height="96"></div>
+        <div className="blog-page-section">
+          <div className="container" style={{ maxWidth: "700px" }}>
+            <div className="blog-single shadow-dark p-30 center">
               <Document
                 file={`../../../papers/${urlTitle}.pdf`}
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -60,14 +60,14 @@ function PaperDetails(props) {
           </div>
         </div>
 
-        <div class="spacer" data-height="96"></div>
-        <div class="page-controls">
+        <div className="spacer" data-height="96"></div>
+        <div className="page-controls">
           <button
             type="button"
             disabled={pageNumber <= 1}
             onClick={previousPage}
           >
-            <i class="fas fa-angle-left"></i>
+            <i className="fas fa-angle-left"></i>
           </button>
           {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
           <button
@@ -75,7 +75,7 @@ function PaperDetails(props) {
             disabled={pageNumber >= numPages}
             onClick={nextPage}
           >
-            <i class="fas fa-angle-right"></i>
+            <i className="fas fa-angle-right"></i>
           </button>
         </div>
       </main>

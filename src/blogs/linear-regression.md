@@ -10,7 +10,6 @@ Let's include our libraries
 import tensorflow as tf
 import pandas as pd
 import matplotlib as mpl
-mpl.use('TkAgg')
 import matplotlib.pyplot as plt
 import time
 ```
@@ -18,6 +17,7 @@ import time
 And make some initial variable declarations, we adjusted these during development (you can too)
 
 ```python {7-9}
+mpl.use('TkAgg')
 batch_size = 32
 learning_rate = 0.003
 n_epoches = 6000

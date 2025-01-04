@@ -15,44 +15,60 @@ const educationData = [
     years: "2012 - 2016",
     content: "Arizona State University",
   },
+];
+
+const certData = [
   {
     id: 3,
     title: "IBM Data Science Certificate",
-    years: "2022 - Present",
+    years: "2022",
     content: "Coursera",
   },
   {
     id: 4,
     title: "Ruby on Rails Certificate",
-    years: "2022 - Present",
+    years: "2022",
     content: "Udemy",
   },
-];
+  {
+    id: 5,
+    title: "Running and Scaling Applications Using Docker and Kubernetes",
+    years: "2020",
+    content: "Chandler Community College",
+  },
+]
 
 const experienceData = [
   {
     id: 1,
+    title: "Senior Software Engineer @ Brivo",
+    years: "Jan 2024 - Present",
+    content:
+      "Full Stack Engineer working on a variety of projects to help secure and manage access to buildings and facilities. Specializing in React, NodeJs, and AWS",
+  },
+  {
+    id: 2,
     title: "Senior Software Engineer @ Trainual",
-    years: "May 2022 - Present",
+    years: "May 2022 - Dec 2023",
     content:
       "Collaborate in a fast growing startup environment to provide quality software solutions, focused on creating Growth for the team",
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Product Engineer @ Intel",
     years: "Sep 2020 - May 2022",
     content:
       "Design and implement software solutions that allow for in-depth analysis of Intel demand and products helping to save billions of dollars across the company",
   },
   {
-    id: 3,
-    title: "Lead Software Engineer @ Intel",
+    id: 4,
+    title: "Software Engineer @ Intel",
     years: "May 2019 - Aug 2020",
     content:
       "Designed, implemented, and maintained scalable software solutions that provide data analytics and enhanced business functionality for the Assembly Test and Technology Development Factory",
   },
   {
-    id: 4,
+    id: 5,
     title: "Software Engineer @ Intel",
     years: "May 2014 - Apr 2019",
     content:
@@ -64,11 +80,20 @@ function Experiences() {
   return (
     <section id="experience">
       <div className="container">
-        <Pagetitle title="Experience" />
+        <Pagetitle title="Experience & Education" />
         <div className="row">
+
+        
           <div className="col-md-6">
             <div className="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden">
               {educationData.map((education) => (
+                <Timeline key={education.id} education={education} />
+              ))}
+              <span className="line"></span>
+            </div>
+
+            <div className="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden mt-4">
+              {certData.map((education) => (
                 <Timeline key={education.id} education={education} />
               ))}
               <span className="line"></span>

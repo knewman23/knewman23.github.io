@@ -69,6 +69,7 @@ export const allPapers = [
     urlTitle: "machine-vision-self-driving-cars",
     category: "Machine Vision",
   },
+  
 ];
 
 export const filters = [
@@ -93,23 +94,41 @@ export const filters = [
 export const allData = [
   {
     id: 1,
-    title: "Trainual",
-    category: "career",
-    image: "images/trainual.jpeg",
-    link: ["https://trainual.com"],
+    title: "Jiu Jitsu Purple Belt",
+    category: "hobbies",
+    image: "images/bjj.png",
+    popupLink: ["images/bjj.png"],
   },
   {
     id: 2,
-    title: "CourseFeed",
-    category: "personal",
-    image: "images/coursefeed.PNG",
-    popupLink: ["images/coursefeed.PNG"],
+    title: "Brivo Access Control",
+    category: "career",
+    image: "images/brivo.PNG",
+    link: ["https://www.brivo.com/products/access-control/"],
   },
   {
-    id: 1,
-    title: "Kachina Software",
+    id: 3,
+    title: "Corporate Insuranc Website Build",
     category: "personal",
-    image: "images/kachina.png",
-    link: ["https://kachinasoftware.com"],
+    image: "images/ci.png",
+    link: ["https://www.corpinsurance.net/"],
+  },
+  {
+    id: 4,
+    title: "M1 BJJ Website Build",
+    category: "personal",
+    image: "images/m1bjj.png",
+    link: ["https://www.m1bjj.com/"],
+  },
+  {
+    id: 5,
+    title: "Data Science Capstone",
+    image: "images/capstone.png",
+    link: ["https://github.com/knewman23/data-science-capstone/blob/master/Krys%20Newman%20Capstone.pdf"],
+    filesource: "../../papers/capstone.pdf",
+    date: "22 September, 2022",
+    author: "Krys",
+    urlTitle: "data-science-capstone",
+    category: "career",
   },
 ];

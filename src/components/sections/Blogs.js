@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Blog from "../elements/Blog";
 import Pagetitle from "../elements/Pagetitle";
+import { allPapers } from "../../data";
+
 
 const allBlogs = [
   {
@@ -40,7 +42,7 @@ function Blogs() {
         <Pagetitle title="Latest Posts" />
         <div className="row blog-wrapper">
           {allBlogs.map((blogItem) => (
-            <div className="col-md-4" key={blogItem.id}>
+            <div className="col-md-4 mb-4" key={blogItem.id}>
               <Blog blogData={blogItem} />
             </div>
           ))}

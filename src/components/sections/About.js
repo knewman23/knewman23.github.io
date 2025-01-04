@@ -7,7 +7,7 @@ const aboutContent = {
 	name: "Krys",
 	avatarImage: "/images/avatar2.png",
 	content:
-		"I'm an Arizona native and Senior Software Engineer with almost a decade of experience designing software. I love spending time with my wife, Sabrina, and three dogs, Nova, Hudson, and Mitsy.",
+		"I'm an Arizona native living in Utah and Senior Software Engineer with almost a decade of experience designing software. I love spending time with my Wife and Daughter, and three dogs, Nova, Hudson, and Mitsy.",
 	content2:
 		"Outside of coding you can probably find me working on our 1929 Ford hot rod, trying new craft beers or training Brazilian Jiu Jitsu.",
 	content3:
@@ -34,13 +34,13 @@ const counterData = [
 	{
 		id: 3,
 		title: "Slack Messages",
-		count: getRandInteger(2827, 5000),
+		count: getRandInteger(2827, 15000),
 		icon: "icon fab fa-slack",
 	},
 	{
 		id: 4,
 		title: "Stack Overflow Searches",
-		count: getRandInteger(2000, 5000),
+		count: getRandInteger(2000, 15000),
 		icon: "icon fab fa-stack-overflow",
 	},
 ];
