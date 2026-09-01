@@ -245,9 +245,6 @@ section { padding: 56px 0 0; }
   margin-bottom: 16px;
   display: block; width: 100%; height: auto;
 }
-.card.is-soon { cursor: default; }
-.card.is-soon:hover { border-color: var(--line); transform: none; }
-
 .cfoot {
   margin-top: auto; border-top: 1px solid var(--line);
   padding-top: 12px; display: flex; justify-content: space-between;
