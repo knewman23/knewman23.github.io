@@ -257,6 +257,26 @@ section { padding: 56px 0 0; }
 .go { font-family: var(--mono); font-size: 11px; color: var(--faint); white-space: nowrap; }
 .card:hover .go, .card:focus-visible .go { color: var(--accent); }
 
+/* ---------- stack (definition list, not skill bars) ---------- */
+.skills { display: grid; grid-template-columns: 168px 1fr; margin: 0; }
+.skills dt {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--faint);
+  padding: 15px 0; border-top: 1px solid var(--line);
+}
+.skills dd {
+  margin: 0; padding: 15px 0; border-top: 1px solid var(--line);
+  font-size: 15.5px; line-height: 1.62; color: var(--ink-2);
+}
+
+/* ---------- career (full width: role and org need the room) ---------- */
+.career td.n { width: 27%; white-space: normal; padding-right: 26px; }
+.career td.n .org {
+  display: block; margin-top: 5px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--faint); font-weight: 400;
+}
+
 /* ---------- tables ---------- */
 table { width: 100%; border-collapse: collapse; }
 caption { position: absolute; left: -9999px; }
@@ -310,6 +330,10 @@ footer .links { display: flex; flex-wrap: wrap; }
   .bio { grid-column: 1 / 12; }
   .two { grid-template-columns: 1fr; gap: 0; }
   .two td.n { white-space: normal; }
+  .skills { grid-template-columns: 1fr; }
+  .skills dt { padding-bottom: 0; border-top: 1px solid var(--line); }
+  .skills dd { padding-top: 7px; border-top: 0; }
+  .career td.n { width: 34%; }
   .two table:last-child { margin-top: 34px; }
 }
 
