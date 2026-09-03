@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CorrelaTech — Krys Newman</title>
+<meta name="description" content="Recorded demo of CorrelaTech, the ASU master's capstone: news articles classified by sentiment against a company's stock price. Angular, SailsJS and a supervised classifier, April 2019.">
+<meta name="author" content="Krys Newman">
+<link rel="canonical" href="https://knewman23.github.io/papers/correlatech-demo.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="CorrelaTech — recorded demo">
+<meta property="og:description" content="Master's capstone: classifying tech news by sentiment and correlating it with stock movement.">
+<meta property="og:url" content="https://knewman23.github.io/papers/correlatech-demo.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%230e0f11'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3Ek%3C/text%3E%3C/svg%3E">
+
+<!-- Set the theme before first paint. A class-swap after load would
+     flash the wrong palette on every navigation. -->
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
+  } catch (e) { /* private mode: fall through to prefers-color-scheme */ }
+</script>
+
+<link rel="preload" href="../fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  /* Page-local: the demo reel. Everything else comes from styles.css. */
+  .lede { max-width: 68ch; font-size: 17.5px; line-height: 1.66; color: var(--soft); }
+  .lede a, .bio a { color: var(--accent); }
+  .facts { grid-column: 1 / 13; display: flex; flex-wrap: wrap; gap: 10px 28px;
+           margin: 26px 0 0; font-family: var(--mono); font-size: 11px;
+           letter-spacing: .06em; color: var(--faint); }
+  .facts b { color: var(--ink); font-weight: 500; }
+  .clip { margin: 0 0 34px; }
+  .clip video { width: 100%; height: auto; display: block; background: #000;
+                border: 1px solid var(--line); border-radius: 2px; }
+  .clip figcaption { margin-top: 10px; max-width: 68ch; color: var(--soft); font-size: 14px; }
+  .clip .cn { font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
+              text-transform: uppercase; color: var(--faint); display: block; margin-bottom: 4px; }
+  .note { border-left: 2px solid var(--line); padding-left: 14px; margin: 26px 0 0;
+          color: var(--faint); font-size: 14px; max-width: 68ch; }
+</style>
+</head>
+<body>
+<a class="skip" href="#reel">Skip to the demo</a>
+
+<div class="band">
+  <div class="wrap">
+    <span class="lbl"><b>KRYS NEWMAN</b> &nbsp;/&nbsp; PAPERS &nbsp;/&nbsp; CORRELATECH</span>
+    <nav aria-label="Sections">
+      <a href="../#papers">Papers</a>
+      <a href="../">Index</a>
+      <button class="theme keep" id="theme" type="button" aria-live="polite">
+        <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+        <span id="theme-text">Dark</span>
+      </button>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <header class="id">
+    <div class="name">
+      <span class="lbl">Master's capstone · 2019</span>
+      <h1>CorrelaTech</h1>
+    </div>
+    <p class="bio">Tech news articles classified as having <b>positive, negative or
+    neutral impact</b> on a company, with a confidence score, set against that company's
+    stock price over the same window. Built for CSE 593 at Arizona State University while
+    at Intel, and written up as <a href="correlatech-capstone.pdf">Classifying Tech News
+    with Sentiment Analysis and Machine Learning</a>.</p>
+    <p class="role"><b>Master’s capstone</b><br>CSE 593 · Arizona State<br>Intel Corporation<br>April 2019</p>
+    <p class="facts">
+      <span><b>Angular</b> UI</span>
+      <span><b>SailsJS</b> API</span>
+      <span><b>Supervised classifier</b> over article text</span>
+      <span><b>5 companies</b> — Amazon, Facebook, Google, Intel, Microsoft</span>
+    </p>
+  </header>
+
+  <section id="paper" aria-labelledby="paper-h">
+    <div class="sh">
+      <h2 id="paper-h">The paper</h2>
+      <span class="ln"></span>
+      <span class="ct">20 PAGES · PDF</span>
+    </div>
+    <p class="lede">The argument, in short: sites like TechCrunch and The Verge published
+    volumes of company news with no sentiment analysis attached, while algorithmic
+    processing was already routine in financial trading. Classifying each article for impact
+    and charting it against the stock gives a reader the trend around a company without
+    asking them to read every headline — and doing it with a model rather than an editor
+    keeps human bias out of the label. <a href="correlatech-capstone.pdf">Read the paper
+    (PDF, 800&nbsp;KB)</a>.</p>
+  </section>
+
+  <section id="reel" aria-labelledby="reel-h">
+    <div class="sh">
+      <h2 id="reel-h">Recorded demo</h2>
+      <span class="ln"></span>
+      <span class="ct">FOUR CLIPS · 5 MIN</span>
+    </div>
+
+    <figure class="clip">
+      <video controls preload="none" playsinline poster="correlatech/1-overview.jpg">
+        <source src="correlatech/1-overview.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="cn">1 · Overview and architecture — 0:34</span>
+      The landing page, which doubles as the app's own documentation: how articles get
+      ranked, and how correcting a ranking with the pencil feeds back as a training label.
+      Below that, the build — one Angular page template driven by a directive per company,
+      and a SailsJS API whose models map to the database columns behind each page.</figcaption>
+    </figure>
+
+    <figure class="clip">
+      <video controls preload="none" playsinline poster="correlatech/2-company-page.jpg">
+        <source src="correlatech/2-company-page.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="cn">2 · A company page — 2:03</span>
+      Amazon, filtered by date range and sort order, with the AMZN price series beside the
+      articles at one month, three, six or a year. The same page template serves every
+      company in the sidebar.</figcaption>
+    </figure>
+
+    <figure class="clip">
+      <video controls preload="none" playsinline poster="correlatech/3-article-feed.jpg">
+        <source src="correlatech/3-article-feed.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="cn">3 · The classified feed — 1:46</span>
+      Two hundred articles loaded for Facebook, each with its source, timestamp and the
+      classifier's verdict, running alongside the FB chart for the same window.</figcaption>
+    </figure>
+
+    <figure class="clip">
+      <video controls preload="none" playsinline poster="correlatech/4-ingestion.jpg">
+        <source src="correlatech/4-ingestion.mp4" type="video/mp4">
+      </video>
+      <figcaption><span class="cn">4 · Ingestion — 0:59</span>
+      The scraper running on the project VM, inserting articles company by company. The
+      unique constraint on title does the deduplication, so re-running the job over the same
+      news cycle is safe.</figcaption>
+    </figure>
+
+    <p class="note">These clips came out of the original demo deck, re-encoded from 122&nbsp;MB
+    to 13&nbsp;MB for the web. They are silent: the deck's title slide promised audio, but no
+    audio track survived in the embedded video. The app itself ran at
+    correlatech.azurewebsites.net and has long since been retired, so this recording and the
+    paper are what's left of it.</p>
+  </section>
+
+  <footer>
+    <span class="lbl">© 2026 Krys Newman</span>
+    <span class="links">
+      <a href="../#papers">Papers</a>
+      <a href="https://github.com/knewman23" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/krys-newman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:krys.newman@gmail.com">Email</a>
+    </span>
+  </footer>
+
+</main>
+
+<script src="../theme.js"></script>
+</body>
+</html>
