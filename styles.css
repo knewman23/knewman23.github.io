@@ -42,6 +42,11 @@
   --band-bg: #0e0f11;
   --band-ink:#ffffff;
   --band-dim:#8b8f98;
+  /* A belt is a real object with a real colour, so these are literal
+     rather than derived. The rank bar carries a stroke because black on
+     near-black would otherwise vanish in dark. */
+  --belt:    #5b2d8e;
+  --belt-tip:#14161d;
 
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -74,6 +79,8 @@
   --band-bg: #06070a;
   --band-ink:#ffffff;
   --band-dim:#7e828d;
+  --belt:    #9f7aea;
+  --belt-tip:#05060a;
 }
 
 /* Respect the OS when the visitor has expressed no preference.
@@ -88,6 +95,7 @@
     --accent:#8b9bff; --ok:#55d4a0; --ok-bg:rgba(85,212,160,.09); --ok-line:rgba(85,212,160,.24);
     --warn:#e2b357; --warn-bg:rgba(226,179,87,.09); --warn-line:rgba(226,179,87,.24); --dot-warn:#e2b357;
     --band-bg:#06070a; --band-ink:#fff; --band-dim:#7e828d;
+    --belt:#9f7aea; --belt-tip:#05060a;
   }
 }
 
