@@ -270,8 +270,8 @@ section { padding: 56px 0 0; }
 .career td.n { width: 27%; white-space: normal; padding-right: 26px; }
 .career td.n .org {
   display: block; margin-top: 5px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--faint); font-weight: 400;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--soft); font-weight: 500;
 }
 
 /* ---------- tables ---------- */
@@ -358,6 +358,13 @@ footer .links { display: flex; flex-wrap: wrap; }
   td { border: 0; padding: 0; }
   td.y { padding: 0 0 4px; width: auto; }
   td.n { width: auto; font-size: 16.5px; margin-bottom: 3px; }
+  /* .career td.n and .two td.n carry a column width for the real table
+     layout, and both outrank the bare td.n rule above on specificity. Once
+     the rows are stacked there is no column left to size, so the widths
+     have to be unset by name -- otherwise "Senior Software Engineer" wraps
+     to three lines inside a 34% box while the description directly beneath
+     it runs the full width of the screen. */
+  .career td.n, .two td.n { width: auto; padding-right: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
