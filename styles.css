@@ -268,10 +268,14 @@ section { padding: 56px 0 0; }
 
 /* ---------- career (full width: role and org need the room) ---------- */
 .career td.n { width: 27%; white-space: normal; padding-right: 26px; }
-.career td.n .org {
+
+/* The line under a role or a degree: employer, or awarding institution.
+   Shared by .career and the education table so both read the same way. */
+td.n .org {
   display: block; margin-top: 5px;
   font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em;
   text-transform: uppercase; color: var(--soft); font-weight: 500;
+  white-space: normal;
 }
 
 /* ---------- tables ---------- */
@@ -303,6 +307,11 @@ td.k {
 .two table { align-self: start; }
 .two td.n { width: auto; white-space: nowrap; padding-right: 24px; }
 .two td.d { width: 52%; }
+/* "Arizona State University" is 24 characters of letter-spaced uppercase
+   mono, which does not fit the education column at its natural width --
+   it has to be allowed to size the column or it wraps mid-name. The two
+   descriptions there are short enough to give up the room. */
+.two td.n .org { white-space: nowrap; }
 
 /* ---------- footer ---------- */
 footer {
@@ -357,14 +366,17 @@ footer .links { display: flex; flex-wrap: wrap; }
   tr { border-bottom: 1px solid var(--line); padding: 14px 0; }
   td { border: 0; padding: 0; }
   td.y { padding: 0 0 4px; width: auto; }
-  td.n { width: auto; font-size: 16.5px; margin-bottom: 3px; }
-  /* .career td.n and .two td.n carry a column width for the real table
-     layout, and both outrank the bare td.n rule above on specificity. Once
-     the rows are stacked there is no column left to size, so the widths
-     have to be unset by name -- otherwise "Senior Software Engineer" wraps
-     to three lines inside a 34% box while the description directly beneath
-     it runs the full width of the screen. */
-  .career td.n, .two td.n { width: auto; padding-right: 0; }
+  /* Stacked, td.n often ends on the .org line, so this gap is the only
+     thing separating the employer or university from the prose beneath
+     it. 3px read as one block of text on a phone. */
+  td.n { width: auto; font-size: 16.5px; margin-bottom: 9px; }
+  /* These three carry column widths for the real table layout, and each
+     outranks the bare td rules above on specificity. Once the rows are
+     stacked there is no column left to size, so the widths have to be
+     unset by name -- otherwise "Senior Software Engineer" wraps to three
+     lines inside a 34% box, and the education capstones wrap inside a 52%
+     one, while everything around them runs the full width of the screen. */
+  .career td.n, .two td.n, .two td.d { width: auto; padding-right: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
