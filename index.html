@@ -178,10 +178,17 @@
           <g font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing=".08em">
             <text x="14" y="18" fill="var(--faint)">VIDA JIU JITSU · UTAH</text>
             <!-- Purple, black rank bar, then the short purple tail past it,
-                 the way the bar actually sits inset from the end of a belt. -->
-            <rect x="14"  y="27" width="222" height="18" fill="var(--belt)"/>
-            <rect x="236" y="27" width="62"  height="18" fill="var(--belt-tip)" stroke="var(--line-2)" stroke-width="1"/>
-            <rect x="298" y="27" width="28"  height="18" fill="var(--belt)"/>
+                 the way the bar actually sits inset from the end of a belt.
+
+                 These carry literal fallbacks, unlike every other schematic
+                 on the page, because --belt and --belt-tip are new tokens: a
+                 visitor holding a cached styles.css from before they existed
+                 resolves var() to nothing, and fill falls back to its initial
+                 black, which is invisible on a dark card. Every other
+                 schematic uses tokens that have always been there. -->
+            <rect x="14"  y="27" width="222" height="18" fill="var(--belt, #5b2d8e)"/>
+            <rect x="236" y="27" width="62"  height="18" fill="var(--belt-tip, #14161d)" stroke="var(--line-2, #cfcfcb)" stroke-width="1"/>
+            <rect x="298" y="27" width="28"  height="18" fill="var(--belt, #5b2d8e)"/>
             <text x="14" y="62" fill="var(--soft)">PURPLE BELT</text>
           </g>
         </svg>
