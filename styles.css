@@ -316,9 +316,26 @@ td.k {
 /* ---------- footer ---------- */
 footer {
   margin-top: 76px; border-top: 1px solid var(--line);
-  padding: 24px 0 58px;
+  padding: 40px 0 58px;
+}
+.foot-row {
   display: flex; justify-content: space-between; align-items: center;
   gap: 16px; flex-wrap: wrap;
+}
+
+/* The shared crest. eagle.png is a black line drawing on transparent, so
+   dark inverts it; light leaves it alone and carries more opacity, because
+   black at 42% on off-white is a ghost where white at 42% on near-black is
+   not. Below about 110px the engraving's lines merge into a smudge, which
+   is why this is not smaller. */
+footer .crest {
+  display: block; width: 132px; height: auto;
+  margin: 0 auto 30px;
+  opacity: .55;
+}
+:root[data-theme="dark"] footer .crest { filter: invert(1); opacity: .42; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) footer .crest { filter: invert(1); opacity: .42; }
 }
 footer a {
   font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
