@@ -63,7 +63,7 @@
       <h1>Krys Newman</h1>
     </div>
     <p class="role"><b>Staff Software Engineer</b><br>MSE in Software Engineering &amp; AI<br>Utah, USA</p>
-    <p class="bio">Twelve years building systems other people depend on: <b>enterprise data platforms, real-time video and IoT messaging, B2B SaaS</b>. Now a founding member of Trainual's AI Guild, working on agentic engineering: an organisation-wide Slack bot wired to our MCP tools, and two green-field product suites. Everything indexed below is running right now, not a screenshot.</p>
+    <p class="bio">Twelve years building systems other people depend on: <b>enterprise data platforms, real-time video and IoT messaging, B2B SaaS</b>. Now a founding member of Trainual's AI Guild, working on agentic engineering: an organisation-wide Slack bot wired to our MCP tools, and two green-field product suites. Check out my current projects and past papers below.</p>
   </header>
 
   <div class="hr"></div>
@@ -110,19 +110,29 @@
         <span class="cfoot"><span class="tags">HTML · localStorage</span><span class="go">OPEN ↗</span></span>
       </a>
 
-      <a class="card" href="https://chrome.google.com/webstore/detail/dikdbdjgfifmcofgbklpnaggajkeikbe" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="https://chromewebstore.google.com/detail/dev-pto/dikdbdjgfifmcofgbklpnaggajkeikbe" target="_blank" rel="noopener noreferrer">
         <span class="ctop"><span class="cn">03</span><span class="pill p-live">Web Store</span></span>
-        <h3>Claude &amp; GitHub Status</h3>
-        <svg class="schema" viewBox="0 0 340 68" role="img" aria-label="Two service states collapsed into one toolbar icon that changes colour.">
+        <h3>Dev PTO</h3>
+        <svg class="schema" viewBox="0 0 340 68" role="img" aria-label="Five service status dots for Claude, GitHub, OpenAI, Bitbucket and Jira, one of them degraded, above a desktop alerts indicator.">
           <g font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing=".08em">
-            <circle cx="60"  cy="34" r="11" fill="var(--ok)"/>
-            <text x="86"  y="31" fill="var(--soft)">CLAUDE  OK</text><text x="86"  y="43" fill="var(--faint)">GITHUB  OK</text>
-            <circle cx="200" cy="34" r="11" fill="var(--dot-warn)"/>
-            <text x="226" y="31" fill="var(--soft)">ONE ICON,</text><text x="226" y="43" fill="var(--faint)">TWO SERVICES</text>
+            <circle cx="47"  cy="20" r="5.5" fill="var(--ok)"/>
+            <circle cx="108" cy="20" r="5.5" fill="var(--ok)"/>
+            <circle cx="170" cy="20" r="5.5" fill="var(--dot-warn)"/>
+            <circle cx="232" cy="20" r="5.5" fill="var(--ok)"/>
+            <circle cx="293" cy="20" r="5.5" fill="var(--ok)"/>
+            <g text-anchor="middle" fill="var(--soft)">
+              <text x="47"  y="38">CLAUDE</text>
+              <text x="108" y="38">GITHUB</text>
+              <text x="170" y="38">OPENAI</text>
+              <text x="232" y="38">BITBUCKET</text>
+              <text x="293" y="38">JIRA</text>
+            </g>
+            <rect x="97" y="48" width="146" height="14" rx="2" fill="none" stroke="var(--line-2)"/>
+            <text x="170" y="58" text-anchor="middle" fill="var(--faint)">DESKTOP ALERTS ON CHANGE</text>
           </g>
         </svg>
-        <p>A toolbar extension showing both services' health at a glance, in a single icon that recolours instead of a panel you have to open.</p>
-        <span class="cfoot"><span class="tags">JavaScript · Chrome API</span><span class="go">OPEN ↗</span></span>
+        <p>Live Statuspage health for Claude, GitHub, OpenAI, Bitbucket and Jira, collapsed into one toolbar icon that recolours instead of a panel you have to open. Optional desktop alerts fire when a service you watch changes state.</p>
+        <span class="cfoot"><span class="tags">JavaScript · Chrome MV3</span><span class="go">OPEN ↗</span></span>
       </a>
 
       <a class="card" href="https://knewman23.github.io/ai-frontier/" target="_blank" rel="noopener noreferrer">
@@ -135,7 +145,7 @@
             <rect x="14" y="46" width="120" height="12" fill="var(--sunken)" stroke="var(--line)"/><text x="20" y="55" fill="var(--faint)">Out[2]: 6.0000099...</text>
           </g>
         </svg>
-        <p>Working notebooks for the curriculum in 02, built from scratch rather than imported, starting at the derivative and the numerical gradient, heading for frontier LLM research.</p>
+        <p>The notebooks I work through alongside Backprop to Frontier, built from scratch rather than imported, starting at the derivative and the numerical gradient and heading for frontier LLM research.</p>
         <span class="cfoot"><span class="tags">Jupyter · Python</span><span class="go">OPEN ↗</span></span>
       </a>
 
@@ -146,10 +156,15 @@
           <g font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing=".08em">
             <text x="14" y="16" fill="var(--faint)">LOSS(θ)</text>
             <path d="M20 14 Q170 58 320 14" fill="none" stroke="var(--line-2)" stroke-width="1.5"/>
-            <circle cx="248" cy="38" r="5" fill="var(--accent)"/>
-            <path d="M243 44l-38 15" stroke="var(--accent)" stroke-width="1.5"/>
-            <path d="M199 62l9-4-3 8z" fill="var(--accent)"/>
-            <text x="230" y="66" fill="var(--soft)">GRADIENT DESCENT</text>
+            <!-- The point sits on the curve at t=0.75, and the arrow runs
+                 along the tangent there, downhill toward the vertex at
+                 (170,36). Both were eyeballed before: the dot floated 8px
+                 under the curve and the arrow fell away three times steeper
+                 than the slope it was meant to be showing. -->
+            <path d="M237.1 31.7L204.4 36.4" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M196.5 37.6l8.4 2.3-1-6.9z" fill="var(--accent)"/>
+            <circle cx="245" cy="30.5" r="5" fill="var(--accent)"/>
+            <text x="206" y="54" fill="var(--soft)">GRADIENT DESCENT</text>
           </g>
         </svg>
         <p>Interactive 3D visualizations for calculus, linear algebra and machine learning. Drag a point across a loss surface and watch the gradient, the tangent plane and the optimizer's path respond, in the browser at 60 fps.</p>
