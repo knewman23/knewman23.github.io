@@ -359,6 +359,19 @@ footer .links { display: flex; flex-wrap: wrap; }
   td.k { display: none; }
   td.n { width: 42%; }
   .sh .ct { display: none; }
+
+  /* The education rows stack here rather than at 520px. They are the
+     narrowest three-column rows on the page -- a degree, the university
+     and a capstone -- and by this width the auto layout has squeezed the
+     name column down to the width of "Arizona State University", so the
+     degree wraps and the three run together as one block. The career
+     table is full width and holds its columns until 520px. */
+  .two table, .two tbody, .two tr, .two td { display: block; width: auto; }
+  .two tr { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .two td { border: 0; padding: 0; }
+  .two td.y { padding: 0 0 4px; width: auto; }
+  .two td.n, .two td.d { width: auto; padding-right: 0; }
+  .two td.n { font-size: 16.5px; margin-bottom: 9px; }
 }
 
 @media (max-width: 520px) {
