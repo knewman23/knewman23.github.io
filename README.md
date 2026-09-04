@@ -1,7 +1,7 @@
 knewman23.github.io
 ===================
 
-A static index of things that are actually running.
+A static index of projects that are actually running.
 
 No framework and no build step: index.html, styles.css, theme.js.
 Open index.html, or serve the directory, and that is the site.
