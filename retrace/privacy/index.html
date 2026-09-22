@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Retrace</title>
+<meta name="description" content="What the Retrace browser extension stores, what leaves your browser, and who it is sent to. There is no Retrace server and no analytics.">
+<meta name="author" content="Krys Newman">
+<link rel="canonical" href="https://knewman23.github.io/retrace/privacy/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy Policy — Retrace">
+<meta property="og:description" content="What the Retrace browser extension stores, what leaves your browser, and who it is sent to.">
+<meta property="og:url" content="https://knewman23.github.io/retrace/privacy/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%230e0f11'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%23fff' text-anchor='middle'%3Ek%3C/text%3E%3C/svg%3E">
+
+<!-- Set the theme before first paint. A class-swap after load would
+     flash the wrong palette on every navigation. -->
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+
+<style>
+  /* Scoped to this page: the index is a grid of cards, this is one column of
+     prose, and the site stylesheet has no prose measure of its own. */
+  .doc { max-width: 42rem; margin: 0 auto; padding: 2.5rem 0 1rem; }
+  .doc h2 { font-size: 1.22rem; margin: 2.6rem 0 .7rem; letter-spacing: -.01em; }
+  .doc h3 { font-size: 1rem; margin: 1.7rem 0 .4rem; color: var(--ink); }
+  .doc p, .doc li { color: var(--soft); line-height: 1.68; }
+  .doc p { margin: 0 0 .85rem; }
+  .doc ul { margin: 0 0 .95rem; padding-left: 1.15rem; }
+  .doc li { margin-bottom: .4rem; }
+  .doc b, .doc strong { color: var(--ink); font-weight: 650; }
+  .doc code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .88em; background: var(--sunken); border: 1px solid var(--line);
+    border-radius: 4px; padding: .1em .35em; color: var(--ink); }
+  .doc .stamp { color: var(--faint); font-size: .92rem; margin-bottom: 1.6rem; }
+  .doc .callout { background: var(--sunken); border: 1px solid var(--line);
+    border-radius: 10px; padding: 1rem 1.15rem; margin: 1.1rem 0 1.4rem; }
+  .doc .callout p:last-child { margin-bottom: 0; }
+  .doc .big { color: var(--ink); font-size: 1.3rem; font-weight: 650;
+    letter-spacing: -.02em; margin: .2rem 0 .9rem; }
+  .doc table { width: 100%; border-collapse: collapse; margin: .4rem 0 1.3rem; }
+  .doc th, .doc td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line);
+    vertical-align: top; font-size: .95rem; }
+  .doc th { color: var(--ink); font-weight: 650; white-space: nowrap; }
+  .doc td { color: var(--soft); }
+</style>
+</head>
+<body>
+<a class="skip" href="#policy">Skip to the policy</a>
+
+<div class="band">
+  <div class="wrap">
+    <span class="lbl"><b>KRYS NEWMAN</b> &nbsp;/&nbsp; RETRACE &nbsp;/&nbsp; PRIVACY</span>
+    <nav aria-label="Sections">
+      <a href="../../">Index</a>
+      <button class="theme keep" id="theme" type="button" aria-live="polite">
+        <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+        <span id="theme-text">Dark</span>
+      </button>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <article class="doc" id="policy">
+
+    <span class="lbl">Browser extension</span>
+    <h1>Privacy Policy — Retrace</h1>
+    <p class="stamp">Last updated 22 September 2026</p>
+
+    <p>Retrace is a Chrome extension that records what you click on a web page and turns it
+      into a Jira ticket with real reproduction steps. It is not affiliated with Atlassian,
+      Anthropic, OpenAI or Google.</p>
+
+    <h2>What the developer collects</h2>
+    <p class="big">Nothing.</p>
+    <p>There is no Retrace server. There are no accounts, no sign-in, no analytics, no
+      telemetry and no error reporting. Nothing about you, your browsing or your captured
+      sessions is ever sent to me or to any service I operate, because there is no such
+      service to send it to.</p>
+
+    <h2>What Retrace stores on your computer</h2>
+    <p>Everything Retrace keeps is stored locally in your own browser profile, and everything
+      is encrypted with AES-GCM before it is written.</p>
+
+    <h3>Your credentials</h3>
+    <p>Held in <code>chrome.storage.local</code>: your Jira site URL, the email address on
+      your Atlassian account, your Jira API token, your Anthropic API key, and — only if you
+      turn on Whisper narration — your OpenAI API key.</p>
+
+    <h3>The session you are capturing</h3>
+    <p>Held in <code>chrome.storage.local</code>: the steps you have recorded. For each one
+      that is a description of the element you clicked, the CSS selector that identifies it,
+      relevant styles and geometry, the page URL, and any note or narration you added.</p>
+
+    <h3>Screenshots</h3>
+    <p>Held in IndexedDB: one cropped PNG per recorded step. These are the most sensitive
+      thing Retrace touches, because a screenshot contains whatever was on your screen. They
+      are encrypted individually and bound to the slot they are stored in.</p>
+
+    <h3>How long any of it is kept</h3>
+    <ul>
+      <li>A session and its screenshots are deleted <b>24 hours</b> after it starts.</li>
+      <li>Once a session has been filed as a ticket, that drops to <b>1 hour</b>.</li>
+      <li>A periodic alarm also sweeps up anything orphaned by an interrupted session.</li>
+      <li>Uninstalling Retrace removes all of it.</li>
+    </ul>
+    <p>Nothing is written to <code>chrome.storage.sync</code>, so none of it is uploaded to a
+      Google account or synced between your devices.</p>
+
+    <h2>What leaves your browser, and to whom</h2>
+    <p>Retrace talks directly to the services below from your own machine, using your own
+      credentials. Nothing is proxied through anything of mine.</p>
+
+    <table>
+      <tr><th>Your Jira site</th>
+        <td>Your credentials are checked when you save them, your projects are listed, and
+          the finished ticket is filed — including the screenshots, attached to the issue.
+          This is your own Atlassian instance.</td></tr>
+      <tr><th>api.anthropic.com</th>
+        <td>The captured session is sent to Claude to be written up as a ticket. This is
+          <b>text only</b>: element descriptions, selectors, URLs, your notes and any
+          narration transcript. <b>Screenshots are never sent to the model.</b></td></tr>
+      <tr><th>api.openai.com</th>
+        <td>Only if you turn on narration and choose Whisper. Your recorded audio is sent
+          there to be transcribed. Narration is off until you turn it on.</td></tr>
+      <tr><th>Google</th>
+        <td>Only if you turn on narration and use Chrome's built-in speech recognition, which
+          streams your audio to Google. That is what that feature is; the setting says which
+          recognizer you are using.</td></tr>
+    </table>
+
+    <p>Retrace asks for access to a website only at the moment you press Start, one origin at
+      a time. It does not hold standing access to your browsing.</p>
+
+    <h2>What the encryption does and does not protect against</h2>
+    <div class="callout">
+      <p>Stating this plainly rather than implying more than is true. The encryption key
+        lives in the same browser profile as the encrypted data.</p>
+      <p><b>It protects against</b> your tokens and screenshots being readable by casual
+        inspection of the profile directory, the DevTools storage viewer, logs, crash dumps,
+        and backup or DLP scanners that index plaintext.</p>
+      <p><b>It does not protect against</b> someone who has your unlocked machine, a copied
+        browser profile, a full-disk backup, or malware running as you. If any of those is
+        your threat model, this encryption is not the control you need.</p>
+    </div>
+
+    <h2>Children</h2>
+    <p>Retrace is a developer tool and is not directed at children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date at the top changes with it. Material changes will be
+      noted in the extension's release notes.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="mailto:krys.newman@gmail.com">krys.newman@gmail.com</a>.
+      Issues with the extension itself are best raised on
+      <a href="https://github.com/knewman23" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+  </article>
+
+  <footer>
+    <img class="crest" src="../../eagle.png" alt="" width="768" height="512">
+    <div class="foot-row">
+      <span class="lbl">© 2026 Krys Newman</span>
+      <span class="links">
+        <a href="../../">Index</a>
+        <a href="https://github.com/knewman23" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:krys.newman@gmail.com">Email</a>
+      </span>
+    </div>
+  </footer>
+</main>
+
+<script src="../../theme.js"></script>
+</body>
+</html>
